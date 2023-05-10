@@ -1,15 +1,15 @@
 ---
 layout: cv
-title: Wode "Nimo" Ni
+title: MengYe Shen
 email:
-  url: mailto:woden@cs.cmu.edu
-  text: woden@cs.cmu.edu
+  url: mailto:shenmengye@gmail.com
+  text: shenmengye@gmail.com
 homepage:
-  url: http://cs.cmu.edu/~woden
-  text: cs.cmu.edu/~woden
+  url: http://nomoshen.com
+  text: nomoshen.com
 ---
 
-# Wode **Ni**
+# MengYe **Shen**
 
 <!--
 include contact information from the front matter
