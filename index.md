@@ -9,162 +9,98 @@ homepage:
   text: nomoshen.com
 ---
 
-# MengYe **Shen**
+# **沈**梦叶
 
 <!--
 include contact information from the front matter
 Supported arguments:
+
     - homepage: url, text
-    - phone
-    - email
--->
+        - phone
+        - email
+            -->
 
 {% include cv-contact.html %}
 
 ## Education
 
-### **Carnegie Mellon University** `2018.9 -`
+### **杭州电子科技大学** `2011.9 - 2014.4`
 
-```
-Pittsburgh, PA
-```
+- **专业:** 计算机应用技术
+- 硕士研究生
 
-- Ph.D. in Software Engineering
-- Co-advised by [Ken Koedinger](http://pact.cs.cmu.edu/koedinger.html) and [Josh Sunshine](http://www.cs.cmu.edu/~jssunshi/)
+## Work Experience
+### **上海七牛云技术有限公司** `2020.8 - 至今`
 
-### **Columbia University** `2016.9 - 2018.5`
+_**云存储技术专家**_<br>
 
-```
-New York, NY
-```
+#### 1. Mongodb数据库内核优化,解决Mongodb在超大规模情况下的性能瓶颈和稳定性问题
 
-- B.S. in Computer Science, _Magna Cum Laude_
-- Vision, Graphics track
+**背景:** 公司强依赖`mongodb`，但是对`mongodb`的在一些场景的性能和稳定性都遇到比较大的瓶颈，主要是包含在一些场景上的巨量抖动、`mongodb`本身的故障容忍性和扩容速度太慢等问题；
 
-### **Dickinson College** `2013.9 - 2016.5`
+主要做了以下的改造：
 
-```
-Carlisle, PA
-```
+* 优化`mongodb`本身的路由模块,解决`mongo`在超大规模集群下面的抖动问题
+* `mongodb`内核引入业务健康检测机制,弥补`mongodb`本身心跳机制的缺陷，提高`mongodb`集群本身的稳定性
+* `mongos`引入限流机制，一方面保证`mongodb`自身的稳定性，第二方面是及时反馈给业务层;
+* `mongodb secondary` 添加路由过滤模块，去除业务层的数据校验步骤，减少请求的latency;
+* 依赖于`mongodb movechunk`命令开发一套并行迁移模块，提高`mongodb`的扩容效率
 
-- B.S. in Computer Science, _Summa Cum Laude_
-- Computer Science Departmental Honors
+对于`mongodb`的这些改造,通过引入官方的集成测试框架，保证`mongodb`在修改之后的稳定性和可靠性，不会因为修改而引起功能的问题;
 
-## Publications
+#### 2. 对象存储元数据稳定性改造
 
-### [**reCode: A Lightweight Find-and-Replace Interaction in the IDE for Transforming Code by Example**]({{ page.homepage.url }}/assets/uist-21-recode.pdf)
-**Wode Ni**, Joshua Sunshine, Vu Le, Sumit Gulwani, and Titus Barik.<br> 
-_In Proceedings of the 34th ACM Symposium on User Interface Software and Technology (UIST'21)._ <br>
-[[PDF]({{ page.homepage.url }}/assets/uist-21-recode.pdf)]
-[[BibTeX]({{ page.homepage.url }}/assets/uist-21-recode.txt)]
-[[video preview](https://youtu.be/fMdHK9UrgQ4)]
-[[talk](https://youtu.be/_GQ8E7EMMws)]
+**背景:**主要是对象存储中元数据模块存在的几个稳定性问题的改造，其中最重要的改造是提高业务层对底层数据库故障和网络抖动的容忍性；
 
+主要几个方面进行改造:
 
-### [**Penrose: From Mathematical Notation to Beautiful Diagrams**](http://penrose.ink/media/Penrose_SIGGRAPH2020.pdf)
-Katherine Ye, **Wode Ni**, Max Krieger, Dor Ma'ayan, Joshua Sunshine, Jonathan Aldrich, and Keenan Crane.<br> 
-_ACM Transactions on Graphics (SIGGRAPH'20)._<br>
-[[PDF](http://penrose.ink/media/Penrose_SIGGRAPH2020.pdf)]
-[[BibTeX]({{ page.homepage.url }}/assets/siggraph20-penrose.txt)]
-[[www](http://penrose.ink/siggraph20.html)]
-[[repo](https://github.com/penrose/penrose)]
+* 故障隔离；主要解决底层`mongodb`某个`shard`出现问题的时候,对业务请求全面影响的问题；
+* 根本上解决业务因为网络小抖动引起的比较大的错误请求; 最终极大的降低了创建连接平均耗时，并且提高了网络抖动的冗余度;
+* 为底层网络模块引入了健康检测模块，保证底层网络出现问题的情况下进行自动切换；提高整体业务的容错性；
 
-### [**How Domain Experts Create Conceptual Diagrams and Implications for Tool Design**]({{ page.homepage.url }}/assets/chi-20-natural-diagramming.pdf)
+#### 3. 对象存储元数据生命周期改造
 
-Dor Ma'ayan\*, **Wode Ni\***, Katherine Ye, Chinmay Kulkarni, and Joshua Sunshine.<br>
-<i class="fas fa-award"></i> <strong>Best Paper Honourable Mention</strong><br>
-_In Proceedings of the 2020 CHI Conference on Human Factors in Computing Systems (CHI'20)._<br>
-[[PDF]({{ page.homepage.url }}/assets/chi-20-natural-diagramming.pdf)]
-[[BibTeX]({{ page.homepage.url }}/assets/chi-20-natural-diagramming.txt)]
+**背景:**从根本上解决目前对象存储元数据的生命周期遇到的一些问题，主要包含：
 
-### [**Defining Visual Narratives for Mathematics Declaratively**](http://2019.plateau-workshop.org/assets/papers-2019/9.pdf)
+1. 生命周期规则的变化对历史数据无法生效
+2. 存在一些数据不能正常进行删除、归档等问题
+3. 使用了额外存储资源来存储需要删除的数据，一方面增加的系统复杂度的问题，另外一方面提升了成本
 
-Max Krieger, **Wode Ni**, and Joshua Sunshine.<br>
-_Evaluation and Usability of Programming Languages and Tools (PLATEAU 2019), co-located with UIST._<br>
-[[PDF](http://2019.plateau-workshop.org/assets/papers-2019/9.pdf)]
-[[slides]({{ page.homepage.url }}/assets/plateau-19-presentation.pdf)]
+本人在这个项目里面主要承担的是: 
 
-### [**Designing Declarative Language Tutorials: a Guided and Individualized Approach**](http://2019.plateau-workshop.org/assets/papers-2019/2.pdf)
+1. 项目方案的制定和可行性验证
+2. 整个项目的编写和上线
 
-Anael Kuperwajs Cohen, **Wode Ni**, and Joshua Sunshine.<br>
-_Evaluation and Usability of Programming Languages and Tools (PLATEAU 2019), co-located with UIST._<br>
-[[PDF](http://2019.plateau-workshop.org/assets/papers-2019/2.pdf)]
-[[slides]({{ page.homepage.url }}/assets/plateau-19-presentation.pdf)]
+落地效果: 1. 在规定时间内可以完成删除； 2. 对历史数据是即使生效的 3. 不需要额外的存储资源，计算资源相当；
 
----
+### **阿里巴巴** `2019.09 - 2020.8`
 
-### [**Substance and Style: domain-specific languages for mathematical diagrams**](https://2017.splashcon.org/event/dsldi-2017-substance-and-style-domain-specific-languages-for-mathematical-diagrams)
+_**技术专家(P7)**_<br>
 
-**Wode Ni\***, Katherine Ye\*, Joshua Sunshine, Jonathan Aldrich, and Keenan Crane.<br> _Domain-Specific Language Design and Implementation (DSLDI 2017), co-located with SPLASH._ <br>
-[[PDF]({{ page.homepage.url }}/assets/dsldi.pdf)]
-[[slides]({{ page.homepage.url }}/assets/dsldi-presentation.pdf)]
-[[www](http://penrose.ink)]
-[[repo](https://github.com/penrose/penrose)]
+#### 1. 专有云监控系统的小型化方案
 
-### [**Whiteboard Scanning Using Super-Resolution**](http://scholar.dickinson.edu/student_honors/221/)
+**背景:** 将输出环境的基础底座中的多套监控产品能融合⼀套,提供⾼效、功能覆盖⾯完整的监控系统;
 
-**Wode Ni**.<br> _Dickinson College Honors Theses. Paper 221._<br>
-[[PDF]({{ page.homepage.url }}/assets/superres.pdf)]
+* 整套小型化方案的制定和落地
+* 主要负责开发采集配置信息的同步和聚合、k8s集群和基础底座的原信息的同步和监控数据的接受等功能
 
-## Experience
-### **Apple** `2022.5 - 2022.9`
+### **杭州时趣信息技术有限公司(蘑菇街)** `2014.4 - 2019.8`
 
-_Research Intern - Machine Intelligence_<br>
+_**资深开发工程师**_<br>
 
-### **Microsoft Research** `2020.5 - 2020.8`
+#### 1. 从 0->1 分布式监控系统, 自研时序数据引擎
 
-_Research Intern_<br>
-Worked with the [PROSE](https://www.microsoft.com/en-us/research/group/prose/) team (mentored by [Titus Barik](https://www.barik.net/)) on improving developer productivity in Visual Studio Code. I interviewed developers to elicit their needs for code transformation tools in editors. Inspired by the empirical data and relevant work in program synthesis, I designed **reCode**, an interaction model for rapidly performing complex code transformation using the familiar find-and-replace experience.
+**背景:** 提供一整套分布式系统系统，稳定提供日常业务监控、机器监控并且日常报警的；
 
-### **Carnegie Mellon University, Research Experiences for Undergraduate** `2017.5 - 2017.8`
+主要的工作有:
 
-_Research Assistant_<br>
-**Penrose** is a system that automatically visualizes mathematics using two domain-specific languages: **Substance** and **Style**. Co-advised by [Jonathan Aldrich](https://www.cs.cmu.edu/~./aldrich/), [Keenan Crane](https://www.cs.cmu.edu/~kmcrane/), [Joshua Sunshine](http://www.cs.cmu.edu/~jssunshi/), and [Katherine Ye](https://www.cs.cmu.edu/~kqy/), I designed and implemented the Style language, and extended the Substance language to support functions and logically quantified statements.
-
-### **Columbia University, Computer Graphics and User Interfaces Lab** `2017.1 - 2017.5`
-
-_Research Assistant_<br>
-Worked with prof. Steven Feiner, on **Cyber Affordance Visualization in Augumented Reality** project. Developed a Microsoft Hololens application that visualizes the Columbia campus in AR environment.
-
-## Mentoring
-
-[Hwei-Shin Harriman](https://hsharriman.github.io/) (Olin College of Engineering, independent research) `CMU, 2021 - Now` <br>
-[Helena Yang](https://heleaf.me/) (CMU, [REUSE](https://www.cmu.edu/scs/s3d/reuse/)) `CMU, 2021` <br>
-[Max Krieger](https://a9.io/) (CMU, independent research & [REUSE](https://www.cmu.edu/scs/s3d/reuse/)) `CMU, 2018 - 2021` <br>
-[Courtney Miller](https://courtney-e-miller.github.io/) (New College of Florida, [REUSE](https://www.cmu.edu/scs/s3d/reuse/)) `CMU, 2019` <br>
-[Anael Kuperwajs Cohen](https://anaelkuperwajs.github.io/) (Macalester College, [REUSE](https://www.cmu.edu/scs/s3d/reuse/)) `CMU, 2019` <br>
-
----
-
-## Honors & Awards
-
-CHI'20 Best Paper Honourable Mention Award `CMU, 2020` <br>
-Phi Beta Kappa `Dickinson, 2018` <br>
-Excellence in Computer Science Award `Columbia, 2018` <br>
-Travel Award PL Mentoring Workshop (PLMW) `SPLASH, 2018` <br>
-Tau Beta Pi, Engineering Honor Society `Columbia, 2017` <br>
-Computer Science Departmental Honors `Dickinson, 2016` <br>
-Pi Mu Epsilon, Mathematics Honor Society `Dickinson, 2016` <br>
-Upsilon Pi Epsilon, Computer Science Honor Society `Dickinson, 2016` <br>
-Alpha Lambda Delta, First year Honor Society `Dickinson, 2013`<br>
-John Montgomery Scholarship `Dickinson, 2013` <br>
-
-## Teaching
-
-Teaching Assistant, **Foundations of Software Engineering (17-313)** `CMU, 2022` <br>
-Teaching Assistant, **Crafting Software (17-450/17-950)** `CMU, 2022` <br>
-Teaching Assistant, **Programming Languages and Translators (COMS 4115)** `Columbia, 2017 - 2018` <br>
-Teaching Assistant, **Introduction to Java II (COMP 132)** `Dickinson, 2016` <br>
-Peer Tutor, **Data Structures and Problem Solving (COMP 232)** `Dickinson, 2016` <br>
-Computer Lab Consultant `Dickinson, 2014 - 2016` <br>
-
-
-## Service
-
-Sub-reviewer `OOPSLA'21, VL/HCC'21` <br>
-Reviewer `CHI'21, CHI'22, SIGGRAPH'22` <br>
-Research Experiences for Undergraduates in Software Engineering Admission Committee `CMU, 2019 - 2022` <br>
+* 从0到1构建蘑菇街分布式监控系统，从采集、存储、查询、报警一体化建设；
+* 引入自研时序数据库，主要解决了当时几个重要问题；
+    * 读写性能的问题
+    * 存储成本过大的问题
+    * 批量删除过期数据的问题
+* 基于自研时序数据引擎，构建了一整套完成的分布式监控系统；包含有扩容、索引、数据一致性、故障恢复等问题
 
 <!-- ### Footer
 
-Last updated: May 2013 -->
+Last updated: May 2023 -->
