@@ -26,8 +26,10 @@ Supported arguments:
 ## Skills
 
 * Experienced in developing and maintaining distributed systems, proficient in C++/Golang programming.
-* In-depth understanding of the main modules of MongoDB and the source code of the time series data engine.
-* Years of experience in low-level development.
+* Good understanding of the core module source code of Mongodb.
+* Good understanding of the Influxdb source code for time-series data engine.
+* Familiar with LSM-structured data storage engines like Leveldb, Rocksdb.
+* Familiarity with consensus algorithms such as Raft and MongoDB's consensus algorithm.
 
 ## Work Experience
 
@@ -35,41 +37,44 @@ Supported arguments:
 
 _**Cloud Storage Technology Expert**_<br>
 
-#### 1. Performance and Stability Optimization of MongoDB
+***Achievements: Improved performance and stability of large-scale MongoDB clusters, led optimization and transformation of object storage lifecycle solution, and provided business support for object storage metadata management.***<br>
 
-**Background:** MongoDB is a crucial database in the company, but it encounters performance and stability issues in specific business scenarios and large-scale clusters.
+#### 1. MongoDB Performance and Stability Improvement
 
-**Key improvements:**
+**Project Description:**
 
-- Optimized the routing module of MongoDB to solve jitter issues in large-scale clusters.
-- Introduced a health check mechanism in the core to compensate for the shortcomings of MongoDB's heartbeat mechanism, improving the stability of MongoDB clusters.
-- Implemented rate limiting in mongos to ensure the stability of MongoDB and provide timely feedback to the business layer.
-- Added a routing filtering module to MongoDB Secondary to reduce latency of business requests.
-- Developed a parallel migration tool based on the MongoDB movechunk command to enhance cluster expansion efficiency.
+- Resolved the issue of 30-60 seconds of service unavailability after MongoDB routing refresh, reducing overall response latency.
+- Accelerated the scaling speed of MongoDB, addressing the slow scaling speed and unexpected results.
+- Added circuit-breaking and flow control capabilities at the MongoDB kernel level to better protect the underlying database.
+- Improved MongoDB's stability in various edge cases, such as slow disks and primary node failure.
+- Optimized MongoDB request latency and enhanced overall response time.
+- Isolated MongoDB shard failures for business continuity.
+
+**Responsibilities:** Led develop and design.
+
+**Project Results:**
+
+1. Reduced MongoDB routing refresh time from `30-60s` to `10-100ms`, significantly improving MongoDB's stability and maintenance complexity.
+2. Shortened the time for scaling MongoDB from 3-4 months to within 1 month by introducing parallel migration solutions for data balancing.
+3. Significantly reduced the impact of MongoDB's stability issues on business and SRE operations, automatically recovering from most MongoDB issues.
+4. Reduced secondary query latency from seconds to milliseconds.
+5. Minimized the business impact caused by a MongoDB shard failure, reducing company losses.
 
 <br>
 
-#### 2. Stability Optimization of Object Storage Metadata
+#### 2. Object Storage Metadata Lifecycle Refactoring
 
-**Background:** There were stability issues with the metadata module in the object storage, especially the lack of tolerance from the business layer towards underlying database failures and network jitter.
+**Project Description:**
 
-**Key improvements:**
+- Modified the lifecycle rules to apply to historical data.
+- Reduced overall resource consumption of the lifecycle service.
 
-- Addressed the comprehensive impact of underlying MongoDB cluster failures on business requests.
-- Significantly reduced the unexpected request errors caused by minor network jitter, improving the business's resilience to network fluctuations.
-- Introduced a low-level network health check module to automatically switch to alternative networks for fault recovery.
+**Responsibilities:** Led develop and design.
 
-<br>
+**Project Results:**
 
-#### 3. Restructuring of Object Storage Metadata Lifecycle
-
-**Background:** There are some issues with the lifecycle of object storage metadata, such as the inability to apply rule changes to historical data, difficulties in deleting certain data, and high storage costs.
-
-**Key improvements:**
-
-- Developed and validated project plans to optimize the metadata lifecycle.
--  Implement timely deletion within the specified timeframe, ensuring that historical data takes effect promptly.
-- Optimized resource utilization by utilizing computational resources without occupying additional storage resources.
+- The lifecycle service now supports the effective application of rules to any modification, even for data before the rule changes.
+- Reduced service resource consumption by 70%, improving overall resource utilization.
 
 <br>
 
@@ -77,26 +82,57 @@ _**Cloud Storage Technology Expert**_<br>
 
 _**Technical Expert (P7)**_<br>
 
+***Achievements: Maintenance and development of distributed monitoring system within Alibaba Group, downsizing of Alibaba Cloud proprietary cloud monitoring system.***<br>
+
 #### Miniaturization Solution for Private Cloud Monitoring System
 
-**Background:** The goal was to integrate multiple monitoring products in the basic infrastructure of the output environment into a single, efficient, and feature-rich monitoring system.
+#### 1. Downsizing Alibaba Cloud Monitoring System
 
-- Developed and implemented a complete miniaturization solution.
-- Mainly responsible for developing functions such as synchronization and aggregation of collection configuration information, synchronization of k8s clusters and basic infrastructure metadata, and receiving monitoring data.
+**Project Description:** Consolidated multiple monitoring products in the basic infrastructure and provided an efficient and comprehensive monitoring system.
+
+**Responsibilities:** develop and design.
+
+**Project Results:** Merged multiple monitoring systems to provide unified and automated monitoring services to the upper layer. Reduced resource consumption of the monitoring system itself, enhanced the competitiveness of the Alibaba Cloud proprietary cloud monitoring system, and achieved the goal of full functionality and low resource consumption.
 
 <br>
 
 ### **Hangzhou Shi Qu Information Technology Co., Ltd. (Mogujie)** `April 2014 - August 2019`
 
-_*****Senior Development Engineer*****_<br>
+_**Senior Development Engineer**_<br>
 
-#### 1. Building a Distributed Monitoring System and Self-developed Time Series Data Engine from 0 to 1
+***Achievements: development of distributed monitoring system, self-developed high-performance time-series data engine, development and maintenance of distributed log system.***<br>
 
-**Main responsibilities:**
+#### 1. Distributed Monitoring System
 
-- Built the **distributed monitoring system** from scratch at Mogujie, including data collection, storage, querying, and alerting.
-- Developed a **self-developed time series database** to address issues of read/write performance, high storage costs, and batch deletion of expired data.
-- Constructed a comprehensive **distributed system** to handle challenges such as scaling, data consistency, and fault recovery.
+**Project Description:**
+
+- Peer-to-peer distributed system without a single point of failure, easy deployment, stable operation, with a throughput of 200,000 TPS per server.
+- Self-developed TimeDB database with LSM structure for easy migration and data cleaning.
+- Real-time collection of monitoring data at the second level.
+- Scaling support within 10 minutes.
+- Active aggregation and query caching.
+- Alerting and warning.
+
+**Responsibilities:** develop and design.
+
+**Project Results:** The throughput is an order of magnitude higher than OpenTSDB, widely used in various business systems of Mogujie, including finance and advertising systems.
+
+#### 2. Distributed Log System
+
+**Project Description:**
+
+- TB-level data collection.
+- All-in-one log collection, analysis, and search.
+- Self-service configuration with user-friendly experience.
+
+**Responsibilities:** Led design and development.
+
+**Project Results:**
+
+- Supported TB-level log collection for Mogujie with low latency, high throughput, and high availability, ensuring the company's report generation and advertising reconciliation.
+- Widely used in various business systems of Mogujie, enabling near real-time log search and analysis.
+
+**Related Technologies:** Kafka, Elasticsearch, Logagent
 
 ## Education
 
@@ -104,11 +140,6 @@ _*****Senior Development Engineer*****_<br>
 
 - **Major:** Computer Application Technology
 - Master's Degree
-
-### **Ningbo University of Technology** `2007.9 - 2011.7`
-
-- **Major:** Computer Science and Technology
-- Bachelor's Degree
 
 <!-- ### Footer
 
