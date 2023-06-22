@@ -2,8 +2,8 @@
 layout: cv
 title: MengYe Shen
 email:
-  url: mailto:shenmengye@gmail.com
-  text: shenmengye@gmail.com
+  url: mailto:smy19890720@gmail.com
+  text: smy19890720@gmail.com
 phone: 18868879362
 homepage:
   url: http://nomoshen.com

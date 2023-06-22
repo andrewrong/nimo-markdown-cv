@@ -2,8 +2,8 @@
 layout: cv
 title: MengYe Shen
 email:
-  url: mailto:shenmengye@gmail.com
-  text: shenmengye@gmail.com
+  url: mailto:smy19890720@gmail.com
+  text: smy19890720@gmail.com
 homepage:
   url: http://nomoshen.com
   text: nomoshen.com
@@ -58,25 +58,7 @@ _**Cloud Storage Technology Expert**_<br>
 2. Shortened the time for scaling MongoDB from 3-4 months to within 1 month by introducing parallel migration solutions for data balancing.
 3. Significantly reduced the impact of MongoDB's stability issues on business and SRE operations, automatically recovering from most MongoDB issues.
 4. Reduced secondary query latency from seconds to milliseconds.
-5. Minimized the business impact caused by a MongoDB shard failure, reducing company losses.
-
-<br>
-
-#### 2. Object Storage Metadata Lifecycle Refactoring
-
-**Project Description:**
-
-- Modified the lifecycle rules to apply to historical data.
-- Reduced overall resource consumption of the lifecycle service.
-
-**Responsibilities:** Led develop and design.
-
-**Project Results:**
-
-- The lifecycle service now supports the effective application of rules to any modification, even for data before the rule changes.
-- Reduced service resource consumption by 70%, improving overall resource utilization.
-
-<br>
+5. Minimized the business impact caused by a MongoDB shard failure, reducing company losses.<br>
 
 ### **Alibaba** `September 2019 - August 2020`
 
