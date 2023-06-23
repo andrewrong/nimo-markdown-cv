@@ -43,7 +43,7 @@ _**Cloud Storage Technology Expert**_<br>
 
 **Project Description:**
 
-- Resolved the issue of 30-60 seconds of service unavailability after MongoDB routing refresh, reducing overall response latency.
+- Resolved the issue of 1-2 seconds of service unavailability after MongoDB routing refresh, reducing overall response latency.
 - Accelerated the scaling speed of MongoDB, addressing the slow scaling speed and unexpected results.
 - Added circuit-breaking and flow control capabilities at the MongoDB kernel level to better protect the underlying database.
 - Improved MongoDB's stability in various edge cases, such as slow disks and primary node failure.
@@ -54,7 +54,7 @@ _**Cloud Storage Technology Expert**_<br>
 
 **Project Results:**
 
-1. Reduced MongoDB routing refresh time from `30-60s` to `10-100ms`, significantly improving MongoDB's stability and maintenance complexity.
+1. Reduced MongoDB routing refresh time from `1-2s` to `10-100ms`, significantly improving MongoDB's stability and maintenance complexity.
 2. Shortened the time for scaling MongoDB from 3-4 months to within 1 month by introducing parallel migration solutions for data balancing.
 3. Significantly reduced the impact of MongoDB's stability issues on business and SRE operations, automatically recovering from most MongoDB issues.
 4. Reduced secondary query latency from seconds to milliseconds.
