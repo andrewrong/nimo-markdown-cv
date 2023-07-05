@@ -4,13 +4,13 @@ title: MengYe Shen
 email:
   url: mailto:smy19890720@gmail.com
   text: smy19890720@gmail.com
-phone: 18868879362
 homepage:
   url: http://nomoshen.com
   text: nomoshen.com
+
 ---
 
-# **沈**梦叶
+# MengYe **Shen**
 
 <!--
 include contact information from the front matter
@@ -25,125 +25,103 @@ Supported arguments:
 
 ## Skills
 
-* 有丰富的分布式系统开发和维护经验，擅长C++/Golang编程；
-* 对Mongodb的核心模块源码有比较好了解
-* 对时序数据引擎Influxdb源码有比较好了解;
-* 熟悉Leveldb、Rocksdb等LSM结构的数据存储引擎
-* 对Raft、mongodb的共识算法有一定的了解
+* Experienced in developing and maintaining distributed systems, proficient in C++/Golang programming.
+* Good understanding of the core module source code of Mongodb.
+* Good understanding of the Influxdb source code for time-series data engine.
+* Familiar with LSM-structured data storage engines like Leveldb, Rocksdb.
+* Familiarity with consensus algorithms such as Raft and MongoDB's consensus algorithm.
 
 ## Work Experience
-### **上海七牛云技术有限公司** `2020.8 - 至今`
+
+### **Shanghai Qiniu Cloud Technology Co., Ltd.** `August 2020 - Present`
+
+_**Cloud Storage Technology Expert**_<br>
+
+***Achievements: Improved performance and stability of large-scale MongoDB clusters, led optimization and transformation of object storage lifecycle solution, and provided business support for object storage metadata management.***<br>
+
+#### 1. MongoDB Performance and Stability Improvement
+
+**Project Description:**
+
+- Resolved the issue of 1-2 seconds of service unavailability after MongoDB routing refresh, reducing overall response latency.
+- Accelerated the scaling speed of MongoDB, addressing the slow scaling speed and unexpected results.
+- Added circuit-breaking and flow control capabilities at the MongoDB kernel level to better protect the underlying database.
+- Improved MongoDB's stability in various edge cases, such as slow disks and primary node failure.
+- Optimized MongoDB request latency and enhanced overall response time.
+- Isolated MongoDB shard failures for business continuity.
+
+**Responsibilities:** Led develop and design.
+
+**Project Results:**
+
+1. Reduced MongoDB routing refresh time from `1-2s` to `10-100ms`, significantly improving MongoDB's stability and maintenance complexity.
+2. Shortened the time for scaling MongoDB from 3-4 months to within 1 month by introducing parallel migration solutions for data balancing.
+3. Significantly reduced the impact of MongoDB's stability issues on business and SRE operations, automatically recovering from most MongoDB issues.
+4. Reduced secondary query latency from seconds to milliseconds.
+5. Minimized the business impact caused by a MongoDB shard failure, reducing company losses.<br>
+
+### **Alibaba** `September 2019 - August 2020`
+
+_**Technical Expert (P7)**_<br>
+
+***Achievements: Maintenance and development of distributed monitoring system within Alibaba Group, downsizing of Alibaba Cloud proprietary cloud monitoring system.***<br>
+
+#### Miniaturization Solution for Private Cloud Monitoring System
+
+#### 1. Downsizing Alibaba Cloud Monitoring System
+
+**Project Description:** Consolidated multiple monitoring products in the basic infrastructure and provided an efficient and comprehensive monitoring system.
+
+**Responsibilities:** develop and design.
+
+**Project Results:** Merged multiple monitoring systems to provide unified and automated monitoring services to the upper layer. Reduced resource consumption of the monitoring system itself, enhanced the competitiveness of the Alibaba Cloud proprietary cloud monitoring system, and achieved the goal of full functionality and low resource consumption.
 
 <br>
 
-_**云存储技术专家**_<br>
-_**工作业绩:  提升大规模mongodb集群的性能和稳定性，主导对象存储生命周期方案的优化改造以及对象存储元数据管理的业务支持**_<br>
-<br>
+### **Hangzhou Shi Qu Information Technology Co., Ltd. (Mogujie)** `April 2014 - August 2019`
 
-#### 1. Mongodb性能和稳定性改造
+_**Senior Development Engineer**_<br>
 
-**项目描述:** 
+***Achievements: development of distributed monitoring system, self-developed high-performance time-series data engine, development and maintenance of distributed log system.***<br>
 
-* 解决mongodb路由刷新之后产生的1-2s无法正常对外服务的问题，减少整体mongodb的响应延迟；
-* 加速mongodb的扩容速度，解决mongodb本身扩容速度慢且结果不如预期的问题;
-* mongodb内核层面加入熔断限流能力，更好地保护底层数据库;
-* 提高mongodb面对各种边缘case的稳定性问题，尤其是磁盘慢，primary假死等一系列问题;
-* 优化mongodb请求耗时，提高mongodb整体的响应时间
-* 业务对mongodb的shard故障进行隔离
+#### 1. Distributed Monitoring System
 
-<br>
+**Project Description:**
 
-**责任描述:**主导开发和设计
+- Peer-to-peer distributed system without a single point of failure, easy deployment, stable operation, with a throughput of 200,000 TPS per server.
+- Self-developed TimeDB database with LSM structure for easy migration and data cleaning.
+- Real-time collection of monitoring data at the second level.
+- Scaling support within 10 minutes.
+- Active aggregation and query caching.
+- Alerting and warning.
 
-**项目效果:**
+**Responsibilities:** develop and design.
 
-1. 将mongodb路由刷新的耗时从1-2s 降低到 10-100ms，极大地提高了mongodb的稳定性和维护的复杂度;
-2. 通过引入并行迁移方案，将扩容mongodb的速度从原先3-4个月缩短到1个月内完成数据平衡；
-3. 大大降低了mongodb自身稳定性问题对业务影响时间和sre运维复杂度，并能自动恢复大多数场景下的mongodb问题；
-4. 将secondary的查询从原先的秒级降低到了毫秒级;
-5. 显著降低了一个mongodb shard故障导致的业务影响范围，减少了公司的损失；
+**Project Results:** The throughput is an order of magnitude higher than OpenTSDB, widely used in various business systems of Mogujie, including finance and advertising systems.
 
-<br>
+#### 2. Distributed Log System
 
-#### 2. 对象存储元数据生命周期重构
+**Project Description:**
 
-**项目描述:** 
+- TB-level data collection.
+- All-in-one log collection, analysis, and search.
+- Self-service configuration with user-friendly experience.
 
-* 修改生命周期规则对历史数据的生效
-* 减少整体生命周期服务的资源消耗
+**Responsibilities:** Led design and development.
 
-**责任描述:**主导开发设计<br>
-**项目效果:**
+**Project Results:**
 
-* 生命周期服务支持任意修对都能在天级别范围内生效，即使在修改规则之前的数据
-* 减少了70%的服务资源消耗,提高了整体资源利用率
+- Supported TB-level log collection for Mogujie with low latency, high throughput, and high availability, ensuring the company's report generation and advertising reconciliation.
+- Widely used in various business systems of Mogujie, enabling near real-time log search and analysis.
 
-<br>
-
-### **阿里巴巴** `2019.09 - 2020.8`
-<br>
-
-_**技术专家(P7)**_<br>
-_**工作业绩: 阿里集团内部分布式监控系统维护和开发、阿里云专有云监控系统的小型化**_<br>
-
-<br>
-
-#### 1. 专有云监控系统的小型化方案
-
-**项目描述:** 将输出环境的基础底座中的多套监控产品融合⼀套,提供⾼效、功能覆盖⾯完整的监控系统;
-
-**责任描述:**开发和设计<br>
-**项目效果:**将多套监控系统合并，为上层提供统一和自动化的监控服务，并降低监控系统本身的资源消耗，提升专有云监控系统的竞争优势，达到功能全、资源消耗较低的目标;
-
-<br>
-
-### **杭州时趣信息技术有限公司(蘑菇街)** `2014.4 - 2019.8`
-<br>
-
-_**职位: 资深开发工程师**_
-_**工作业绩: 分布式监控系统开发，自研高性能时序数据引擎，分布式日志系统开发维护**_
-<br>
-
-#### 1. 分布式监控系统
-
-**项目描述:** 
-
-* 无单点对等式分布系统，部署简单，运行稳定，单机20万tps。
-* 自研TimeDB数据库，LSM结构，易于迁移和数据清理
-* 秒级统计级监控数据收集
-* 10分钟内缩扩容支持
-* 主动聚合、查询缓存
-* 报警、预警
-
-<br>
-
-**责任描述:**开发和设计<br>
-**项目效果:**吞吐量比OpenTSDB高一个数量级,广泛应用于蘑菇街各业务系统，包括资金与广告系统
-
-<br>
-
-#### 2. 分布式日志系统
-
-**项目描述:**
-
-* TB级数据收集
-* 一站式日志收集、分析和搜索
-* 自助式的配置、友好的使用体验
-
-**责任描述:**主导设计和开发<br>
-**项目效果:**
-
-* 支撑蘑菇街TB级别的打点日志收集，做到低延迟、高吞吐、高可用，保障蘑菇街的报表、广告的对账业务等
-* 广泛应用于蘑菇街个业务系统，能做到准实时的日志搜索和分析；
-
-**相关技术:** Kafka, Es, Logagent
+**Related Technologies:** Kafka, Elasticsearch, Logagent
 
 ## Education
 
-### **杭州电子科技大学** `2011.9 - 2014.4`
+### **Hangzhou Dianzi University** `September 2011 - April 2014`
 
-- **专业:** 计算机应用技术
-- 硕士研究生
+- **Major:** Computer Application Technology
+- Master's Degree
 
 <!-- ### Footer
 
